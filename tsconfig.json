@@ -13,7 +13,13 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
-    "module": "preserve"
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "paths": {
+      "@components/*": ["./src/app/Component/*"],
+      "@models/*": ["./src/app/Model/*"]
+    },
+    "composite": true, // compilerOptions on tsconfig.app.json is giving error even tho build and serve works fine
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
