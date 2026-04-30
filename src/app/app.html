@@ -1,2 +1,25 @@
-<nav>test</nav>
-<router-outlet></router-outlet>
+<div class="flex flex-col h-screen">
+    <header class="relative bg-neutral-300 border-b-2 border-primary">
+        @if(loading()) {
+            <app-loading-bar class="absolute w-full"></app-loading-bar>
+        }
+        <nav class="flex items-center py-4 px-8">
+            <img src="Bühler_Group_Logo.svg" alt="Bühler Group" class="h-6" />
+            <div class="ms-auto flex items-center gap-4">
+                <div class="flex items-center gap-2">
+                    <span class="material-icons">access_time</span>
+                    <span>{{ timeNow() | date:'dd.MM.yyyy HH:mm' }}</span>
+                </div>
+                @if(user$ | async; as user) {
+                    <div class="flex items-center gap-2">
+                        <span class="material-icons-outlined">account_circle</span>
+                        <span>{{ user.name }}</span>
+                    </div>
+                }
+            </div>
+        </nav>
+    </header>
+    <main class="flex-1 overflow-auto">
+        <router-outlet></router-outlet>
+    </main>
+</div>

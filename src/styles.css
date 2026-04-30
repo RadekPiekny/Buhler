@@ -1,3 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
 
-@import 'tailwindcss';
+@theme {
+    --color-primary: #00A89C;
+    --color-alarm: #FF0000;
+    --color-warning: #FFFF00;
+  
+    --color-positive:     #22c55e;
+    --color-positive-50:  #f0fdf4;
+    --color-positive-100: #dcfce7;
+    --color-positive-200: #bbf7d0;
+    --color-positive-300: #86efac;
+    --color-positive-400: #4ade80;
+    --color-positive-500: #22c55e;
+    --color-positive-600: #16a34a;
+    --color-positive-700: #15803d;
+    --color-positive-800: #166534;
+    --color-positive-900: #14532d;
+}
+
+@keyframes loadingBar {
+  0%   { transform: translateX(calc(-1 * var(--bar-width))); }
+  100% { transform: translateX(100vw); }
+}

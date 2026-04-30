@@ -1,1 +1,7 @@
-<p>machine-box works! - {{ name() }} - {{ icon() }} - {{ status() }}</p>
+<div class="flex flex-col gap-1 w-48 p-6 items-center {{statusBg()}}">
+    <div class="flex w-full justify-end">
+        <span class="material-icons-outlined {{statusIconColor()}}">{{ statusIconName() }}</span>
+    </div>
+    <span class="{{icon().CssClass}} !text-6xl">{{icon().name}}</span>
+    <span>{{ name() }}</span>
+</div>

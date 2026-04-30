@@ -1,0 +1,10 @@
+@if(machines$ | async; as machines) {
+    <nav class="flex bg-neutral-300 w-full items-center">
+        @for (machine of machines; track machine.id) {
+            <app-machine-nav-btn [name]="machine.name" [status]="machine.status" />
+        }
+        <button (click)="refresh()" class="flex p-2 ms-2 hover:bg-neutral-500/10 hover:cursor-pointer">
+            <span class="material-icons">refresh</span>
+        </button>
+    </nav>
+}

@@ -17,9 +17,15 @@
     "moduleResolution": "bundler",
     "paths": {
       "@components/*": ["./src/app/Component/*"],
-      "@models/*": ["./src/app/Model/*"]
+      "@models/*": ["./src/app/Model/*"],
+      "@services/*": ["./src/app/Service/*"],
+      "@enums/*": ["./src/app/Enum/*"],
+      "@interfaces/*": ["./src/app/Interface/*"],
+      "@pipes/*": ["./src/app/Pipe/*"],
+      "@functions/*": ["./src/app/Function/*"],
+      "@views/*": ["./src/app/View/*"]
     },
-    "composite": true, // compilerOptions on tsconfig.app.json is giving error even tho build and serve works fine
+    "composite": true, // compilerOptions on tsconfig.app.json is giving error in VScode even tho build and serve works fine
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

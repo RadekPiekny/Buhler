@@ -1,1 +1,8 @@
-<app-machine-box name="test" icon="test" [status]="ms.Running"></app-machine-box>
+@if(machines$ | async; as machines) {
+    <div class="flex gap-12 items-center justify-center h-full w-fit mx-auto relative">
+        @for (machine of machines; track machine.id) {
+            <div class="absolute h-0.5 bg-primary w-full -z-10"></div>
+            <app-machine-box name="{{ machine.name }}" [icon]="machine.icon" [status]="machine.status"></app-machine-box>
+        }
+    </div>
+}

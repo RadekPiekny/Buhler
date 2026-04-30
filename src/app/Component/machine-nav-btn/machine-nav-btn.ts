@@ -1,21 +1,17 @@
 import { Component, computed, input } from '@angular/core';
-import { MachineStatus } from '../../Model/Enum/MachineState';
-import { IMachineIcon } from '@models/Interface/machine';
 import { statusBg, statusIconColor, statusIconName } from '@functions/machine-status';
+import { MachineStatus } from '@models/Enum/MachineState';
 
 @Component({
-  selector: 'app-machine-box',
+  selector: 'app-machine-nav-btn',
   imports: [],
-  templateUrl: './machine-box.html'
+  templateUrl: './machine-nav-btn.html',
 })
-export class MachineBox {
+export class MachineNavBtn {
   name = input.required<string>();
-  icon = input.required<IMachineIcon>();
   status = input.required<MachineStatus>();
 
   statusBg = computed(() => statusBg(this.status()));
   statusIconName = computed(() => statusIconName(this.status()));
   statusIconColor = computed(() => statusIconColor(this.status()));
-
-  
 }
