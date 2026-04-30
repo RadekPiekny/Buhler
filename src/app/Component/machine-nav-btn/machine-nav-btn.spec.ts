@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MachineNavBtn } from './machine-nav-btn';
+import { MachineStatus } from '@models/Enum/MachineState';
 
 describe('MachineNavBtn', () => {
   let component: MachineNavBtn;
@@ -13,6 +14,10 @@ describe('MachineNavBtn', () => {
 
     fixture = TestBed.createComponent(MachineNavBtn);
     component = fixture.componentInstance;
+
+    fixture.componentRef.setInput('name', 'Scale');
+    fixture.componentRef.setInput('status', MachineStatus.Running);
+
     await fixture.whenStable();
   });
 
